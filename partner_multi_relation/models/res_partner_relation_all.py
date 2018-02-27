@@ -430,7 +430,7 @@ CREATE OR REPLACE VIEW %%(table)s AS
             rec.write_resource(base_resource, vals)
         # Invalidate cache to make res.partner.relation.all reflect changes
         # in underlying res.partner.relation:
-        self.env.invalidate_all()
+        self.env.clear()
         return True
 
     @api.model
