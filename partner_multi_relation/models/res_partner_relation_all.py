@@ -133,7 +133,7 @@ class ResPartnerRelationAll(models.AbstractModel):
         register = self.get_register()
         union_select = ' UNION '.join(
             [register[key]['select_sql']
-             for key in register.iterkeys() if key != '_lastkey'])
+             for key in register if key != '_lastkey'])
         return """\
 CREATE OR REPLACE VIEW %%(table)s AS
      WITH base_selection AS (%(union_select)s)
