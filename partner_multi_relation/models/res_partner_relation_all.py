@@ -114,7 +114,8 @@ class ResPartnerRelationAll(models.AbstractModel):
             select_sql=select_sql % {
                 'key_offset': _last_key_offset,
                 'is_inverse': is_inverse,
-                'extra_additional_columns': self._get_additional_relation_columns(),
+                'extra_additional_columns':
+                self._get_additional_relation_columns(),
             })
 
     def get_register(self):
